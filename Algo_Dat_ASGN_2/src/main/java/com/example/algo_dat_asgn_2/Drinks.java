@@ -1,9 +1,9 @@
 package com.example.algo_dat_asgn_2;
 
-public class Drinks {
+public class Drinks extends Ingredients{
     String name;
     String countryOfOrigin;
-    String description;
+    String dDescription;
     double abv;
 
     public String getName() {
@@ -23,11 +23,11 @@ public class Drinks {
     }
 
     public String getDescription() {
-        return description;
+        return dDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String dDescription) {
+        this.dDescription = dDescription;
     }
 
     public double getAbv() {
@@ -38,10 +38,11 @@ public class Drinks {
         this.abv = abv;
     }
 
-    public Drinks(String name, String countryOfOrigin, String description, double abv) {
+    public Drinks(String iName, String description, String name, String countryOfOrigin, String dDescription, double abv) {
+        super(iName, description);
         this.name = name;
         this.countryOfOrigin = countryOfOrigin;
-        this.description = description;
+        this.dDescription = dDescription;
         this.abv = abv;
     }
 }
