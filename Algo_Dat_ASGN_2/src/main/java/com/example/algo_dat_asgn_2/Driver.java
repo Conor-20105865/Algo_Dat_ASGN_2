@@ -1,5 +1,12 @@
 package com.example.algo_dat_asgn_2;
 
-public class placeholder_java {
-    //Conors kinda acting freaky wth
+import javafx.fxml.FXML;
+
+public class Driver {
+
+    @FXML
+    public void deleteDrink() {
+
+    }
+
 }

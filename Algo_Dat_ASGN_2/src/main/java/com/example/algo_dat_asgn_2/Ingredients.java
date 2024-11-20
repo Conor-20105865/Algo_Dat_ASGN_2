@@ -4,6 +4,7 @@ public class Ingredients  {
     String iName;
     String description;
 
+    //Getters and Setters
     public String getName() {
         return iName;
     }
@@ -19,6 +20,7 @@ public class Ingredients  {
     public void setDescription(String description) {
         this.description = description;
     }
+
 
     public Ingredients(String iName, String description)  {
         this.iName = iName;
