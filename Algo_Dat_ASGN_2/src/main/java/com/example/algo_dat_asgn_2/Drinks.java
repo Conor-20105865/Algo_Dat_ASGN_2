@@ -44,4 +44,12 @@ public class Drinks extends Ingredients{
     public void setdDescription(String dDescription) {
         this.dDescription = dDescription;
     }
+
+    public Drinks(String iName, String description, String name, String countryOfOrigin, String dDescription, double abv) {
+         super(iName, description);
+         this.name = name;
+         this.countryOfOrigin = countryOfOrigin;
+         this.dDescription = dDescription;
+         this.abv = abv;
+    }
 }
