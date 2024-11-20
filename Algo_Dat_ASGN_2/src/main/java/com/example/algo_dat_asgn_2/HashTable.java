@@ -2,20 +2,16 @@ package com.example.algo_dat_asgn_2;
 
 public class HashTable {
 
-    int[] hashTable;
+   private static final int defaultCapacity = 50;
 
-    public int hash(String k, int hashTableSize) {
-        int total = 0;
-        for (int i = 0; i < k.length(); i++)
-            total += k.charAt(i);
-        return total % hashTableSize;
-    }
+   //Arrays
+    private String[] keys;
+    private String[] values;
+    private int size;
 
-    public HashTable(int size) {
-        hashTable = new int[size];
-    }
-
-    public int add(int item) {
-           return add(item);
+    public HashTable() {
+        keys = new String[defaultCapacity]; // initialize keys
+        values = new String[defaultCapacity]; //initialize values
+        size = 0;
     }
 }
