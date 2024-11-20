@@ -27,4 +27,7 @@ public class Recipes extends Ingredients {
         this.amount = amount;
         this.recipeGuide = recipeGuide;
     }
+
+    public void addIngredient(Ingredients ingredient, int quantity) {
+    }
 }

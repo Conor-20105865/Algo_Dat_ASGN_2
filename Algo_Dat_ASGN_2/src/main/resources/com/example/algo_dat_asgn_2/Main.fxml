@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.algo_dat_asgn_2.MainController" spacing="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    <Label text="Add a New Drink"/>
+
+    <TextField fx:id="drinkNameField" promptText="Drink Name"/>
+    <TextField fx:id="countryField" promptText="Country of Origin"/>
+    <TextField fx:id="descriptionField" promptText="Description"/>
+    <TextField fx:id="abvField" promptText="Alcohol Content (ABV)"/>
+    <TextField fx:id="imageUrlField" promptText="Image URL"/>
+
+    <Button text="Add Drink" onAction="#handleAddDrink"/>
+
+    <Label text="Add Ingredient to Drink"/>
+    <TextField fx:id="ingredientNameField" promptText="Ingredient Name"/>
+    <TextField fx:id="ingredientDescriptionField" promptText="Ingredient Description"/>
+    <TextField fx:id="ingredientAbvField" promptText="Ingredient ABV"/>
+    <Button text="Add Ingredient" onAction="#handleAddIngredient"/>
+
+    <Label text="Add Recipe to Drink"/>
+    <TextField fx:id="recipeDrinkNameField" promptText="Drink Name"/>
+    <TextField fx:id="recipeIngredientNameField" promptText="Ingredient Name"/>
+    <TextField fx:id="recipeQuantityField" promptText="Quantity (ml)"/>
+    <Button text="Add Recipe" onAction="#handleAddRecipe"/>
+
+    <Label text="Drink List"/>
+    <ListView fx:id="drinksList"/>
+</VBox>

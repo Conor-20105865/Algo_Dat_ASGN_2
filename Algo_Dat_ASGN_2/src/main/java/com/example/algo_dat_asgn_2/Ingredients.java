@@ -26,4 +26,5 @@ public class Ingredients  {
         this.iName = iName;
         this.description = description;
     }
+
 }
