@@ -5,4 +5,7 @@ public class Recipes extends Ingredients {
     public Recipes(String iName, String description) {
         super(iName, description);
     }
+
+    public void addIngredient(Ingredients ingredient, int quantity) {
+    }
 }

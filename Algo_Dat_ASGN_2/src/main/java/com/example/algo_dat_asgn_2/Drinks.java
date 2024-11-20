@@ -22,14 +22,6 @@ public class Drinks extends Ingredients{
         this.countryOfOrigin = countryOfOrigin;
     }
 
-    public String getDescription() {
-        return dDescription;
-    }
-
-    public void setDescription(String dDescription) {
-        this.dDescription = dDescription;
-    }
-
     public double getAbv() {
         return abv;
     }
@@ -38,11 +30,18 @@ public class Drinks extends Ingredients{
         this.abv = abv;
     }
 
-    public Drinks(String iName, String description, String name, String countryOfOrigin, String dDescription, double abv) {
-        super(iName, description);
-        this.name = name;
-        this.countryOfOrigin = countryOfOrigin;
+
+    public void addIngredient(Ingredients ingredient) {
+    }
+
+    public void addRecipe(Recipes recipe) {
+    }
+
+    public String getdDescription() {
+        return dDescription;
+    }
+
+    public void setdDescription(String dDescription) {
         this.dDescription = dDescription;
-        this.abv = abv;
     }
 }
