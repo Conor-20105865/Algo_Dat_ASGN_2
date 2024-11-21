@@ -1,6 +1,6 @@
 package com.example.algo_dat_asgn_2;
 
-public class Drinks extends Ingredients{
+public class Drinks extends Ingredients {
     String name;
     String countryOfOrigin;
     String dDescription;

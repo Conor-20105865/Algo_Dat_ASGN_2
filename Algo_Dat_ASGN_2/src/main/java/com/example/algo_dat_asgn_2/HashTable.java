@@ -1,17 +1,8 @@
 package com.example.algo_dat_asgn_2;
 
-public class HashTable {
+public class HashTable<K, V> {
+    private static final int INTIAL_CAPACITY = 16;
+    private static final double LOAD_FACTOR =- 0.75;
 
-   private static final int defaultCapacity = 50;
-
-   //Arrays
-    private String[] keys;
-    private String[] values;
-    private int size;
-
-    public HashTable() {
-        keys = new String[defaultCapacity]; // initialize keys
-        values = new String[defaultCapacity]; //initialize values
-        size = 0;
-    }
-}
+    private Entry<K, V>[] table;
+}   private int size;
