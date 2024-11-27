@@ -1,4 +1,8 @@
+//TODO: make this shit redundant make use hash table
+
 package com.example.algo_dat_asgn_2;
+
+
 
 import java.io.*;
 

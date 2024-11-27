@@ -102,7 +102,7 @@ public class HashTable<K, V> implements Serializable {
         }
 
     }
-
+    //no idea what this does :(
     public int size() {
         return size;
     }
@@ -144,5 +144,8 @@ public class HashTable<K, V> implements Serializable {
     }
 
     //TODO Start sorting dat shit out bruh.
+
+    //TODO: Quick sort, random,
+
 }
 
