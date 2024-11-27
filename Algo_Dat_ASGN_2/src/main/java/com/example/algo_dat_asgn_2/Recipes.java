@@ -1,6 +1,6 @@
 package com.example.algo_dat_asgn_2;
 
-public class Recipes extends Ingredients {
+public class Recipes extends Drinks {
 
     private int amount; // in millileters or grams
     private String recipeGuide;
@@ -22,8 +22,8 @@ public class Recipes extends Ingredients {
         this.recipeGuide = recipeGuide;
     }
 
-    public Recipes(String iName, String description, int amount, String recipeGuide) {
-        super(iName, description);
+    public Recipes(String name, String countryOfOrigin, String dDescription, double abv, int amount, String recipeGuide) {
+        super(name, countryOfOrigin, dDescription, abv);
         this.amount = amount;
         this.recipeGuide = recipeGuide;
     }

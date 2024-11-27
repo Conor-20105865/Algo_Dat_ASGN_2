@@ -1,8 +1,8 @@
 package com.example.algo_dat_asgn_2;
 
-public class Ingredients  {
+public class Ingredients extends Recipes  {
     String iName;
-    String description;
+    String iDescription;
 
     //Getters and Setters
     public String getName() {
@@ -14,17 +14,18 @@ public class Ingredients  {
     }
 
     public String getDescription() {
-        return description;
+        return iDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String iDescription) {
+        this.iDescription = iDescription;
     }
 
 
-    public Ingredients(String iName, String description)  {
+    public Ingredients(String name, String countryOfOrigin, String dDescription, double abv, int amount, String recipeGuide, String iName, String iDescription) {
+        super(name, countryOfOrigin, dDescription, abv, amount, recipeGuide);
         this.iName = iName;
-        this.description = description;
+        this.iDescription = iDescription;
     }
 
 }

@@ -1,6 +1,6 @@
 package com.example.algo_dat_asgn_2;
 
-public class Drinks extends Ingredients {
+public class Drinks {
     String name;
     String countryOfOrigin;
     String dDescription;
@@ -45,8 +45,7 @@ public class Drinks extends Ingredients {
         this.dDescription = dDescription;
     }
 
-    public Drinks(String iName, String description, String name, String countryOfOrigin, String dDescription, double abv) {
-         super(iName, description);
+    public Drinks(String name, String countryOfOrigin, String dDescription, double abv) {
          this.name = name;
          this.countryOfOrigin = countryOfOrigin;
          this.dDescription = dDescription;
