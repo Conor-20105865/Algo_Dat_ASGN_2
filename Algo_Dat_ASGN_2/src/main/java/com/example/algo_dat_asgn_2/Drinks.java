@@ -1,16 +1,13 @@
 package com.example.algo_dat_asgn_2;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Drinks extends Ingredients {
     private String name;
     private String countryOfOrigin;
     private String dDescription;
     private double abv;
 
-    private List<Ingredients> ingredients = new ArrayList<>();
-    private List<Recipes> recipes = new ArrayList<>();
+    private DoublyLinkedList<Ingredients> ingredients = new DoublyLinkedList<>();
+    private DoublyLinkedList<Recipes> recipes = new DoublyLinkedList<>();
 
     // Constructor
     public Drinks(String iName, String description, String name, String countryOfOrigin, String dDescription, double abv) {
@@ -55,19 +52,57 @@ public class Drinks extends Ingredients {
     }
 
     // Manage Ingredients and Recipes
-    public List<Ingredients> getIngredients() {
+    public DoublyLinkedList<Ingredients> getIngredients() {
         return ingredients;
     }
 
     public void addIngredient(Ingredients ingredient) {
-        ingredients.add(ingredient);
+        if (ingredient != null) {
+            ingredients.insertAtEnd(ingredient);
+        } else {
+            System.err.println("Ingredient cannot be null.");
+        }
     }
 
-    public List<Recipes> getRecipes() {
+    public DoublyLinkedList<Recipes> getRecipes() {
         return recipes;
     }
 
     public void addRecipe(Recipes recipe) {
-        recipes.add(recipe);
+        if (recipe != null) {
+            recipes.insertAtEnd(recipe);
+        } else {
+            System.err.println("Recipe cannot be null.");
+        }
+    }
+
+    // Additional Methods for Convenience
+    public void printIngredients() {
+        System.out.println("Ingredients:");
+        if (!ingredients.isEmpty()) {
+            ingredients.printList();
+        } else {
+            System.out.println("No ingredients added.");
+        }
+    }
+
+    public void printRecipes() {
+        System.out.println("Recipes:");
+        if (!recipes.isEmpty()) {
+            recipes.printList();
+        } else {
+            System.out.println("No recipes added.");
+        }
+    }
+
+    // Debugging utility method
+    public void printDrinkDetails() {
+        System.out.println("Drink Details:");
+        System.out.println("Name: " + name);
+        System.out.println("Country of Origin: " + countryOfOrigin);
+        System.out.println("Description: " + dDescription);
+        System.out.println("ABV: " + abv);
+        printIngredients();
+        printRecipes();
     }
 }

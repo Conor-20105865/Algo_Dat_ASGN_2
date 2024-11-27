@@ -160,7 +160,7 @@ public class MainController {
     }
 
     private Ingredients findIngredientByName(Drinks drink, String ingredientName) {
-        for (Ingredients ingredient : drink.getIngredients()) {
+        for (Ingredients ingredient : drinksList.getItems()) {
             if (ingredient.getName().equals(ingredientName)) {
                 return ingredient;
             }

@@ -47,6 +47,11 @@ public class DoublyLinkedList<T> implements Serializable {
         }
     }
 
+    public Node<T> getHead() {
+        return head;
+    }
+
+
     // Insert at a specific position (0 base index)
     public void insertAtPosition(T data, int position) {
         if (position <= 0) {

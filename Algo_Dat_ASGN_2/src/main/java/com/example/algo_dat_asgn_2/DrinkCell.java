@@ -31,8 +31,11 @@ public class DrinkCell extends ListCell<Drinks> {
             country.setText("Origin: " + item.getCountryOfOrigin());
             description.setText("Description: " + item.getdDescription());
             abv.setText("ABV: " + item.getAbv());
-            StringBuilder ingredientsText = new StringBuilder("Recipe: ");
-            for (Ingredients ing : item.getIngredients()) {
+
+            StringBuilder ingredientsText = new StringBuilder("Recipe:");
+            DoublyLinkedList.Node<Ingredients> current = item.getIngredients().getHead();
+            while (current != null) {
+                Ingredients ing = current.data;
                 ingredientsText.append("\n  - ")
                         .append(ing.getName())
                         .append(": ")
@@ -40,7 +43,9 @@ public class DrinkCell extends ListCell<Drinks> {
                         .append(" (ABV: ")
                         .append(ing.getAbv())
                         .append("%)");
+                current = current.next;
             }
+
             ingredients.setText(ingredientsText.toString());
             setGraphic(content);
         } else {
