@@ -10,22 +10,27 @@
     <padding>
         <Insets top="10" right="10" bottom="10" left="10"/>
     </padding>
-    <Label text="Add a New Drink"/>
 
+    <!-- Add a New Drink -->
+    <Label text="Add a New Drink"/>
     <TextField fx:id="drinkNameField" promptText="Drink Name"/>
     <TextField fx:id="countryField" promptText="Country of Origin"/>
     <TextField fx:id="descriptionField" promptText="Description"/>
     <TextField fx:id="abvField" promptText="Alcohol Content (ABV)"/>
     <TextField fx:id="imageUrlField" promptText="Image URL"/>
-
     <Button text="Add Drink" onAction="#handleAddDrink"/>
+    <Button text="Remove Drink" onAction="#handleRemoveDrink"/>
 
+    <!-- Add Ingredient to Drink -->
     <Label text="Add Ingredient to Drink"/>
+    <TextField fx:id="ingredientDrinkNameField" promptText="Drink Name"/>
     <TextField fx:id="ingredientNameField" promptText="Ingredient Name"/>
     <TextField fx:id="ingredientDescriptionField" promptText="Ingredient Description"/>
     <TextField fx:id="ingredientAbvField" promptText="Ingredient ABV"/>
     <Button text="Add Ingredient" onAction="#handleAddIngredient"/>
+    <Button text="Remove Ingredient" onAction="#handleRemoveIngredient"/>
 
+    <!-- Add Recipe to Drink -->
     <Label text="Add Recipe to Drink"/>
     <TextField fx:id="recipeDrinkNameField" promptText="Drink Name"/>
     <TextField fx:id="recipeIngredientNameField" promptText="Ingredient Name"/>

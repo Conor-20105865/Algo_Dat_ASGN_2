@@ -1,10 +1,18 @@
 package com.example.algo_dat_asgn_2;
 
-public class Ingredients  {
-    String iName;
-    String description;
+public class Ingredients {
+    private String iName;
+    private String description;
+    private double abv;
 
-    //Getters and Setters
+    // Constructor
+    public Ingredients(String iName, String description, double abv) {
+        this.iName = iName;
+        this.description = description;
+        this.abv = abv;
+    }
+
+    // Getters and Setters
     public String getName() {
         return iName;
     }
@@ -21,10 +29,11 @@ public class Ingredients  {
         this.description = description;
     }
 
-
-    public Ingredients(String iName, String description)  {
-        this.iName = iName;
-        this.description = description;
+    public double getAbv() {
+        return abv;
     }
 
+    public void setAbv(double abv) {
+        this.abv = abv;
+    }
 }

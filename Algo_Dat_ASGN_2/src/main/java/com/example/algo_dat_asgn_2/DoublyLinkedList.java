@@ -47,7 +47,7 @@ public class DoublyLinkedList<T> implements Serializable {
         }
     }
 
-    // Insert at a specific position (0-based index)
+    // Insert at a specific position (0 base index)
     public void insertAtPosition(T data, int position) {
         if (position <= 0) {
             insertAtBeginning(data);
@@ -77,7 +77,7 @@ public class DoublyLinkedList<T> implements Serializable {
         }
     }
 
-    // Save the list to a file (binary serialization)
+    // Save (binary serialization)
     public void saveListToBinaryFile(String filename) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
             oos.writeObject(this);
@@ -87,7 +87,7 @@ public class DoublyLinkedList<T> implements Serializable {
         }
     }
 
-    // Load the list from a file (binary serialization)
+    // Load (binary serialization)
     public static <T> DoublyLinkedList<T> loadListFromBinaryFile(String filename) {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
             return (DoublyLinkedList<T>) ois.readObject();
@@ -108,7 +108,7 @@ public class DoublyLinkedList<T> implements Serializable {
         System.out.println();
     }
 
-    //print list tail to head
+    // Print the list from tail to head
     public void printListReverse() {
         Node<T> currNode = tail;
         System.out.print("Doubly Linked List (Tail to Head): ");
@@ -119,17 +119,14 @@ public class DoublyLinkedList<T> implements Serializable {
         System.out.println();
     }
 
-
-
-    //clear the whole list
+    // Clear the whole list
     public void clear() {
         head = null;
         tail = null;
         System.out.println("List cleared.");
     }
 
-    //update existing shit at specific location
-    //TODO: REMEMBER THAT ITS A 0-BASE INDEX
+    // Update node at specific position (0-based index)
     public void updateAtPosition(T newData, int position) {
         if (position < 0) {
             System.err.println("Invalid position.");
@@ -151,8 +148,7 @@ public class DoublyLinkedList<T> implements Serializable {
         }
     }
 
-
-    //count method for modes shit in somethin dunno kinda just here cause why not
+    // Count the number of nodes in the list
     public int countNodes() {
         int count = 0;
         Node<T> current = head;
@@ -163,7 +159,6 @@ public class DoublyLinkedList<T> implements Serializable {
         return count;
     }
 
-    //code for deleting shtuff
     // Remove node at a specific position
     public void removeAtPosition(int position) {
         if (position < 0 || head == null) {
@@ -197,37 +192,61 @@ public class DoublyLinkedList<T> implements Serializable {
         }
     }
 
-    //node empty check? cause why the fuck not
+    // Remove node with specific data
+    public void remove(T data) {
+        Node<T> current = head;
+        while (current != null) {
+            if (current.data.equals(data)) {
+                if (current.prev != null) {
+                    current.prev.next = current.next;
+                } else {
+                    head = current.next;  // Update head if at the start
+                }
+                if (current.next != null) {
+                    current.next.prev = current.prev;
+                } else {
+                    tail = current.prev;  // Update tail if at the end
+                }
+                break;
+            }
+            current = current.next;
+        }
+    }
+
+    // Check if the list is empty
     public boolean isEmpty() {
         return head == null;
     }
 
-
-
-
-    public static void main(String[] args) {
-        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
-
-        // Test insertions
-        list.insertAtEnd(1);
-        list.insertAtEnd(3);
-        list.insertAtEnd(4);
-        list.printList();
-
-        list.insertAtBeginning(0);
-        list.printList();
-
-        list.insertAtPosition(2, 2);
-        list.printList();
+ //   public static void main(String[] args) {
+ //       DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+//
+//        // Test insertions
+//        list.insertAtEnd(1);
+//        list.insertAtEnd(3);
+//        list.insertAtEnd(4);
+//        list.printList();
+//
+//        list.insertAtBeginning(0);
+//        list.printList();
+//
+//        list.insertAtPosition(2, 2);
+//        list.printList();
+//
+        // Test removals
+//        list.removeAtPosition(2);
+//        list.printList();
+//
+ //       list.remove(4);
+  //      list.printList();
 
         // Save the list to a file
-        list.saveListToBinaryFile("doublyLinkedList.bin");
+//        list.saveListToBinaryFile("doublyLinkedList.bin");
 
         // Load the list from the file
-        DoublyLinkedList<Integer> loadedList = DoublyLinkedList.loadListFromBinaryFile("doublyLinkedList.bin");
-        if (loadedList != null) {
-            loadedList.printList();
-        }
-    }
+      //  DoublyLinkedList<Integer> loadedList = DoublyLinkedList.loadListFromBinaryFile("doublyLinkedList.bin");
+      //  if (loadedList != null) {
+      //      loadedList.printList();
+      //  }
+  //  }
 }
-

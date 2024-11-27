@@ -1,11 +1,27 @@
 package com.example.algo_dat_asgn_2;
 
-public class Drinks extends Ingredients{
-    String name;
-    String countryOfOrigin;
-    String dDescription;
-    double abv;
+import java.util.ArrayList;
+import java.util.List;
 
+public class Drinks extends Ingredients {
+    private String name;
+    private String countryOfOrigin;
+    private String dDescription;
+    private double abv;
+
+    private List<Ingredients> ingredients = new ArrayList<>();
+    private List<Recipes> recipes = new ArrayList<>();
+
+    // Constructor
+    public Drinks(String iName, String description, String name, String countryOfOrigin, String dDescription, double abv) {
+        super(iName, description, abv); // Include abv in the call to the superclass constructor
+        this.name = name;
+        this.countryOfOrigin = countryOfOrigin;
+        this.dDescription = dDescription;
+        this.abv = abv;
+    }
+
+    // Getters and Setters
     public String getName() {
         return name;
     }
@@ -22,21 +38,6 @@ public class Drinks extends Ingredients{
         this.countryOfOrigin = countryOfOrigin;
     }
 
-    public double getAbv() {
-        return abv;
-    }
-
-    public void setAbv(double abv) {
-        this.abv = abv;
-    }
-
-
-    public void addIngredient(Ingredients ingredient) {
-    }
-
-    public void addRecipe(Recipes recipe) {
-    }
-
     public String getdDescription() {
         return dDescription;
     }
@@ -45,11 +46,28 @@ public class Drinks extends Ingredients{
         this.dDescription = dDescription;
     }
 
-    public Drinks(String iName, String description, String name, String countryOfOrigin, String dDescription, double abv) {
-         super(iName, description);
-         this.name = name;
-         this.countryOfOrigin = countryOfOrigin;
-         this.dDescription = dDescription;
-         this.abv = abv;
+    public double getAbv() {
+        return abv;
+    }
+
+    public void setAbv(double abv) {
+        this.abv = abv;
+    }
+
+    // Manage Ingredients and Recipes
+    public List<Ingredients> getIngredients() {
+        return ingredients;
+    }
+
+    public void addIngredient(Ingredients ingredient) {
+        ingredients.add(ingredient);
+    }
+
+    public List<Recipes> getRecipes() {
+        return recipes;
+    }
+
+    public void addRecipe(Recipes recipe) {
+        recipes.add(recipe);
     }
 }
