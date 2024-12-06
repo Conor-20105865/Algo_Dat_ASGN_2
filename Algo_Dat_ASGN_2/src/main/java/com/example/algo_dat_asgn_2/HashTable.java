@@ -143,25 +143,7 @@ public class HashTable<K, V> implements Serializable {
         System.out.println("Value for 'date': " + hashTable.get(4)); // Output: 4
     }
 
-    // Save (binary serialization)
-    public void saveListToBinaryFile(String filename) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
-            oos.writeObject(this);
-            System.out.println("List saved to binary file: " + filename);
-        } catch (IOException e) {
-            System.err.println("Error saving list to binary file: " + e.getMessage());
-        }
-    }
 
-    // Load (binary serialization)
-    public static <T> DoublyLinkedList<T> loadListFromBinaryFile(String filename) {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
-            return (DoublyLinkedList<T>) ois.readObject();
-        } catch (IOException | ClassNotFoundException e) {
-            System.err.println("Error loading list from binary file: " + e.getMessage());
-            return null;
-        }
-    }
 
     //TODO Start sorting dat shit out bruh.
 
