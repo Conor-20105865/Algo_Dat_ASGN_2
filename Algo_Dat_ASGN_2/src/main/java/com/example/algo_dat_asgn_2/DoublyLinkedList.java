@@ -12,18 +12,18 @@ public class DoublyLinkedList<T> implements Serializable {
     Node<T> head;
     Node<T> tail;
 
-    static class Node<T> implements Serializable {
-        private static final long serialVersionUID = 1L;
+    public static class Node<T> implements Serializable {
         T data;
         Node<T> next;
         Node<T> prev;
 
-        Node(T d) {
-            data = d;
-            next = null;
-            prev = null;
+        public Node(T data) {
+            this.data = data;
+            this.next = null;
+            this.prev = null;
         }
     }
+
 
     // Insert at the end of the list
     public void insertAtEnd(T data) {
@@ -226,6 +226,11 @@ public class DoublyLinkedList<T> implements Serializable {
     public boolean isEmpty() {
         return head == null;
     }
+
+
+    //Ignore the following code its just test insertions
+
+
 
  //   public static void main(String[] args) {
  //       DoublyLinkedList<Integer> list = new DoublyLinkedList<>();

@@ -28,6 +28,11 @@ public class MainController {
             @Override
             public javafx.scene.control.ListCell<Drinks> call(ListView<Drinks> listView) {
                 return new DrinkCell();
+                // Load the list from the file
+                  //  DoublyLinkedList<Integer> loadedList = DoublyLinkedList.loadListFromBinaryFile("doublyLinkedList.bin");
+                   // if (loadedList != null) {
+                   //   loadedList.printList();
+                   //  }
             }
         });
     }
@@ -116,28 +121,7 @@ public class MainController {
         }
     }
 
-    @FXML
-    private void handleAddRecipe() {
-        try {
-            String drinkName = recipeDrinkNameField.getText();
-            String ingredientName = recipeIngredientNameField.getText();
-            int quantity = Integer.parseInt(recipeQuantityField.getText());
 
-            Drinks drink = findDrinkByName(drinkName);
-            if (drink != null) {
-                // Default abv value for the recipe ingredient
-                double abv = 0.0;
-                Recipes recipe = new Recipes(ingredientName, "Recipe ingredient", abv, quantity, "Sample guide");
-                drink.addRecipe(recipe);
-                refreshDrinkList();
-                showAlert(Alert.AlertType.INFORMATION, "Success", "Recipe added successfully!");
-            } else {
-                showAlert(Alert.AlertType.ERROR, "Error", "Drink not found!");
-            }
-        } catch (Exception e) {
-            showAlert(Alert.AlertType.ERROR, "Error", "Invalid input! Please check your fields.");
-        }
-    }
 
     private void refreshDrinkList() {
         drinksList.getItems().clear();
