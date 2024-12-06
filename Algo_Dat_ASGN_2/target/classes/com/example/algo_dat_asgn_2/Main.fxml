@@ -31,12 +31,12 @@
     <Button text="Remove Ingredient" onAction="#handleRemoveIngredient"/>
 
     <!-- Add Recipe to Drink -->
-    <Label text="Add Recipe to Drink"/>
-    <TextField fx:id="recipeDrinkNameField" promptText="Drink Name"/>
-    <TextField fx:id="recipeIngredientNameField" promptText="Ingredient Name"/>
-    <TextField fx:id="recipeQuantityField" promptText="Quantity (ml)"/>
-    <Button text="Add Recipe" onAction="#handleAddRecipe"/>
-
-    <Label text="Drink List"/>
-    <ListView fx:id="drinksList"/>
-</VBox>
+    <!--    <Label text="Add Recipe to Drink"/>
+      <TextField fx:id="recipeDrinkNameField" promptText="Drink Name"/>
+      <TextField fx:id="recipeIngredientNameField" promptText="Ingredient Name"/>
+      <TextField fx:id="recipeQuantityField" promptText="Quantity (ml)"/>
+      <Button text="Add Recipe" onAction="#handleAddRecipe"/>
+    -->
+      <Label text="Drink List"/>
+      <ListView fx:id="drinksList"/>
+  </VBox>
