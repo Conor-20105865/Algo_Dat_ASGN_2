@@ -28,11 +28,7 @@ public class MainController {
             @Override
             public javafx.scene.control.ListCell<Drinks> call(ListView<Drinks> listView) {
                 return new DrinkCell();
-                // Load the list from the file
-                  //  DoublyLinkedList<Integer> loadedList = DoublyLinkedList.loadListFromBinaryFile("doublyLinkedList.bin");
-                   // if (loadedList != null) {
-                   //   loadedList.printList();
-                   //  }
+
             }
         });
     }

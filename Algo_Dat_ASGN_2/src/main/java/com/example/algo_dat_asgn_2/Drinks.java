@@ -64,17 +64,17 @@ public class Drinks extends Ingredients {
         }
     }
 
-    public DoublyLinkedList<Recipes> getRecipes() {
-        return recipes;
-    }
-
-    public void addRecipe(Recipes recipe) {
-        if (recipe != null) {
-            recipes.insertAtEnd(recipe);
-        } else {
-            System.err.println("Recipe cannot be null.");
-        }
-    }
+  //  public DoublyLinkedList<Recipes> getRecipes() {
+ //       return recipes;
+ //   }
+//
+//    public void addRecipe(Recipes recipe) {
+//        if (recipe != null) {
+//            recipes.insertAtEnd(recipe);
+//        } else {
+//            System.err.println("Recipe cannot be null.");
+//        }
+//    }
 
     // Additional Methods for Convenience
     public void printIngredients() {
