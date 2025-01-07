@@ -164,10 +164,6 @@ public class HashTable<K, V> implements Serializable {
         System.out.println("Value for 'date': " + hashTable.get(4)); // Output: 4
     }
 
-
-
-    //TODO Start sorting dat shit out bruh.
-
     //TODO: Quick sort, random,
 
 }
