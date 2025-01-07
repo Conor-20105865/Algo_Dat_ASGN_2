@@ -29,7 +29,10 @@ public class HashTable<K, V> implements Serializable {
         }
     }
 
+
+    //Takes one parameter key of generic type K
     private int hash(K key) {
+        //Generate a Number for the key and use modulus to keep within the bounds of the table
         return (key.hashCode() % table.length);
     }
 
@@ -44,16 +47,20 @@ public class HashTable<K, V> implements Serializable {
         int index = hash(key);
 
         for (int i = 0; i < table.length; i++) {
+            //if the slot INDEX is empty
             if (table[index] == null) {
+                //Create a new Entry Object and give it a key and value
                 table[index] = new Entry<>(key, value);
-                size += 1;
+                size += 1; //Add 1 to the size of hashtable
                 return;
             }
 
+            //if the key is equal to the key being inserted
             if (table[index].key.equals(key)) {
-                table[index].value = value;
+                table[index].value = value; //Update value of existing key
                 return;
             }
+            //Linear probing
             index = (index + 1) % table.length;
         }
 
@@ -65,12 +72,14 @@ public class HashTable<K, V> implements Serializable {
         int index = hash(key);
 
         for(int i = 0; i < table.length; i++) {
+            //Check for an empty slot
             if (table[index] == null) {
                 return null;
             }
 
+            //If current slot contains key being searched for
             if (table[index].key.equals(key)) {
-                return table[index].value;
+                return table[index].value; //Return whats stored
             }
             index = (index + 1) % table.length; // Linear probing
         }
@@ -79,12 +88,16 @@ public class HashTable<K, V> implements Serializable {
 
     //Resize The Indexes within the hashtable
     private void resize() {
+        //Save Current Hash Table
         Entry<K, V>[] oldTable = table;
+        //Create a Newer, Bigger table
         table = new Entry[oldTable.length * 2];
         size = 0;
 
         for (Entry<K, V> entry: oldTable) {
+            //For every non null entry
             if (entry != null) {
+                //call put method to rehash
                 put(entry.key, entry.value);
             }
         }
@@ -93,11 +106,15 @@ public class HashTable<K, V> implements Serializable {
     //Redistribute keys within the hash table
     private void rehash(int startIndex) {
         int index = (startIndex + 1) % table.length;
+        //Loop through table
         for (int i = 0; table[index] != null; i++) {
+            //Retrieve and Remove entry
             Entry<K,V> entry = table[index];
             table[index] = null;
             size --;
+            //reinsert
             put(entry.key, entry.value);
+            //Move to next slot
             index = (index + 1) % table.length;
         }
 
@@ -116,13 +133,17 @@ public class HashTable<K, V> implements Serializable {
     public boolean remove(K key) {
         int index = hash(key);
 
+        //Iterate through the table
         for (int i = 0; table[index] != null; i ++) {
+            //Compare current slot with key being searched
             if (table[index].key.equals(key)) {
+                //Remove key and decrement table size by 1
                 table[index] = null;
                 size--;
-                return true;
+                return true; //Key removed
             }
         }
+        //Key not found
         return false;
     }
 
